@@ -1,4 +1,4 @@
-package instuments;
+package instruments;
 
 import instruments.guitar.Guitar;
 import instruments.guitar.GuitarType;
@@ -43,6 +43,6 @@ public class GuitarTest {
 
     @Test
     public void canPlay() {
-        assertEquals("The noise of stairway to heaven being butchered", guitar.play());
+        assertEquals("The noise of stairway to heaven being butchered on guitar", guitar.play("stairway to heaven"));
     }
 }

@@ -17,7 +17,7 @@ public class Guitar extends Instrument {
     public int getNumberOfStrings(){
         return this.guitarType.getNumberOfStrings();
     }
-    public String play(){
-        return "The noise of stairway to heaven being butchered";
+    public String play(String song){
+        return "The noise of " + song + " being butchered on guitar";
     }
 }
