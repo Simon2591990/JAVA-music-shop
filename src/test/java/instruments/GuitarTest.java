@@ -12,7 +12,7 @@ public class GuitarTest {
 
     @org.junit.Before
     public void setUp() {
-        guitar = new Guitar("Fender","Black",900, GuitarType.ELECTRIC);
+        guitar = new Guitar("Guitar",500, 750,"Fender","Black", GuitarType.ELECTRIC);
 
     }
 
@@ -28,7 +28,7 @@ public class GuitarTest {
 
     @org.junit.Test
     public void hasDealerPrice() {
-        assertEquals(900, guitar.getDealerPrice(), 0.01);
+        assertEquals(500, guitar.getDealerPrice(), 0.01);
     }
 
     @org.junit.Test
@@ -42,7 +42,17 @@ public class GuitarTest {
     }
 
     @Test
+    public void hasSellPrice() {
+        assertEquals(750, guitar.getSellPrice(), 0.01);
+    }
+
+    @Test
     public void canPlay() {
         assertEquals("The noise of stairway to heaven being butchered on guitar", guitar.play("stairway to heaven"));
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(50, guitar.calculateMarkup(),0.001);
     }
 }

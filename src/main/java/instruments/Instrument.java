@@ -1,15 +1,20 @@
 package instruments;
 
-public abstract class Instrument implements IPlay {
+import behaviours.IPlay;
+import behaviours.ISell;
+import items_for_sale.ShopItem;
+
+import static java.lang.StrictMath.round;
+
+public abstract class Instrument extends ShopItem implements IPlay, ISell{
 
     private String brand;
     private String colour;
-    private double dealerPrice;
 
-    public Instrument(String brand, String colour, double dealerPrice) {
+    public Instrument(String description, double dealerPrice, double sellPrice, String brand, String colour) {
+        super(description, dealerPrice, sellPrice);
         this.brand = brand;
         this.colour = colour;
-        this.dealerPrice = dealerPrice;
     }
 
     public String getBrand() {
@@ -20,7 +25,8 @@ public abstract class Instrument implements IPlay {
         return colour;
     }
 
-    public double getDealerPrice() {
-        return dealerPrice;
-    }
+
+
+
+
 }

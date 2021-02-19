@@ -5,8 +5,8 @@ import instruments.Instrument;
 public class Brass extends Instrument {
     BrassType brassType;
 
-    public Brass(String brand, String colour, double dealerPrice, BrassType brassType) {
-        super(brand, colour, dealerPrice);
+    public Brass(String description, double dealerPrice, double sellPrice, String brand, String colour, BrassType brassType) {
+        super(description, dealerPrice, sellPrice, brand, colour);
         this.brassType = brassType;
     }
 

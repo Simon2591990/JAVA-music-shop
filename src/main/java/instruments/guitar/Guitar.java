@@ -4,10 +4,10 @@ import instruments.Instrument;
 
 public class Guitar extends Instrument {
 
-    GuitarType guitarType;
+    private GuitarType guitarType;
 
-    public Guitar(String brand, String colour, double dealerPrice, GuitarType guitarType) {
-        super(brand, colour, dealerPrice);
+    public Guitar(String description, double dealerPrice, double sellPrice, String brand, String colour, GuitarType guitarType) {
+        super(description, dealerPrice, sellPrice, brand, colour);
         this.guitarType = guitarType;
     }
 

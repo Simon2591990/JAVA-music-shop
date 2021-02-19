@@ -12,7 +12,7 @@ public class BrassTest {
 
     @Before
     public void setUp() throws Exception {
-        brass = new Brass("Yamaha","brass",1500.40, BrassType.TRUMPET);
+        brass = new Brass("Brass",1000, 2000,"Yamaha","brass", BrassType.TRUMPET);
 
     }
 
@@ -28,7 +28,7 @@ public class BrassTest {
 
     @Test
     public void getDealerPrice() {
-        assertEquals(1500.40, brass.getDealerPrice(), 0.01);
+        assertEquals(1000, brass.getDealerPrice(), 0.01);
     }
 
     @Test
@@ -37,7 +37,17 @@ public class BrassTest {
     }
 
     @Test
+    public void getSellPrice() {
+        assertEquals(2000, brass.getSellPrice(),0.01);
+    }
+
+    @Test
     public void play() {
         assertEquals("the sound of The Mexican Hat Dance can be heard. Toot toot ", brass.play("The Mexican Hat Dance"));
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(100, brass.calculateMarkup(),0.01);
     }
 }

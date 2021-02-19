@@ -12,7 +12,7 @@ public class PianoTest {
 
     @Before
     public void setUp() {
-        piano = new Piano("Steinway","Black",1200.50, PianoType.GRAND);
+        piano = new Piano("Piano",1200.50, 1500,"Steinway","Black", PianoType.GRAND);
     }
 
     @Test
@@ -37,7 +37,17 @@ public class PianoTest {
     }
 
     @Test
+    public void getSellPrice() {
+        assertEquals(1500, piano.getSellPrice(), 0.01);
+    }
+
+    @Test
     public void canPlay() {
         assertEquals("The noise of Chopsticks being butchered on piano", piano.play("Chopsticks"));
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(24.94, piano.calculateMarkup(),0.01);
     }
 }
